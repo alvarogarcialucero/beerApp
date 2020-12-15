@@ -18,7 +18,6 @@ export class HomePage {
 
   searchFood(e){   
     this.selectedFood = e.detail.value;
-    console.log(this.selectedFood);
     if(this.selectedFood === ""){
       this.beers = [];
       return
