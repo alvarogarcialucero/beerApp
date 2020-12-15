@@ -11,10 +11,8 @@ export class BeersService {
 
 
   getBeersByFood(food:string) {
-    
-    let search = food !== "" ? food : "%27%27";
 
-    return this._http.get(`https://api.punkapi.com/v2/beers?food=${search}`).pipe(map((data:any) => {
+    return this._http.get(`https://api.punkapi.com/v2/beers?food=${food}`).pipe(map((data:any) => {
 
       const beers:any[] = [];
 

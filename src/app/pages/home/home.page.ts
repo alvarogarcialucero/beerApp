@@ -16,10 +16,14 @@ export class HomePage {
     this.selectedFood = "";
   }
 
-  searchFood(e){
-    this.loading = true;
+  searchFood(e){   
     this.selectedFood = e.detail.value;
     console.log(this.selectedFood);
+    if(this.selectedFood === ""){
+      this.beers = [];
+      return
+    }
+    this.loading = true;
     this._beersService.getBeersByFood(this.selectedFood).subscribe( response => {      
      this.beers = response;
       this.loading = false;
